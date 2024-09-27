@@ -1,6 +1,6 @@
 <input [(ngModel)]="input">
 
-<button (click)="decrypt()">Decrypt</button>
+<button [disabled]="!input()" (click)="decrypt()">Decrypt</button>
 
 @if (output()) {
   <p>Result: {{ output() }}</p>

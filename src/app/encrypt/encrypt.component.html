@@ -1,6 +1,6 @@
 <input [(ngModel)]="input">
 
-<button (click)="encrypt()">Encrypt</button>
+<button [disabled]="!input()" (click)="encrypt()">Encrypt</button>
 
 @if (output()){
   <p>Result: {{output()}}</p>
