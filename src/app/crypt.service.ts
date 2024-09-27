@@ -49,6 +49,7 @@ export class CryptService {
       if (entry) {
         output += entry.value + ' ';
       }
+      else return 'Invalid Character';
     }
     return output;
   }
@@ -61,6 +62,7 @@ export class CryptService {
       if (entry) {
         output += entry.key;
       }
+      else return 'Invalid Morse Code';
     }
     return output;
   }
