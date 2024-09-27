@@ -2,4 +2,7 @@
 
 <button (click)="encrypt()">Encrypt</button>
 
-<p>{{output()}}</p>
+@if (output()){
+  <p>Result: {{output()}}</p>
+}
+

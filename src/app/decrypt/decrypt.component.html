@@ -2,4 +2,6 @@
 
 <button (click)="decrypt()">Decrypt</button>
 
-<p>{{output()}}</p>
+@if (output()) {
+  <p>Result: {{ output() }}</p>
+}
