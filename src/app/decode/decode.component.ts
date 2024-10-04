@@ -3,25 +3,32 @@ import {CryptService} from "../crypt.service";
 import {FormsModule} from "@angular/forms";
 
 @Component({
-  selector: 'app-decrypt',
+  selector: 'app-decode',
   standalone: true,
   imports: [
     FormsModule
   ],
-  templateUrl: './decrypt.component.html',
-  styleUrl: './decrypt.component.css'
+  templateUrl: './decode.component.html',
+  styleUrl: './decode.component.css'
 })
-export class DecryptComponent {
-  crypt : CryptService = inject(CryptService);
+export class DecodeComponent {
+  coder : CryptService = inject(CryptService);
 
   readonly input = signal('');
   readonly output = signal('');
+  readonly error = signal(false);
 
   constructor() {
   }
 
   decrypt(): void {
-    this.output.set(this.crypt.decrypt(this.input().trim()));
+    try{
+      this.output.set(this.coder.decode(this.input().trim()));
+      this.error.set(false);
+    }
+    catch {
+      this.error.set(true);
+    }
     this.clear();
   }
 

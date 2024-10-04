@@ -5,25 +5,32 @@ import {MorseCodePlayerService} from "../morse-code-player.service";
 import {addWarning} from "@angular-devkit/build-angular/src/utils/webpack-diagnostics";
 
 @Component({
-  selector: 'app-encrypt',
+  selector: 'app-encode',
   standalone: true,
   imports: [
     FormsModule
   ],
-  templateUrl: './encrypt.component.html',
-  styleUrl: './encrypt.component.css'
+  templateUrl: './encode.component.html',
+  styleUrl: './encode.component.css'
 })
-export class EncryptComponent {
+export class EncodeComponent {
   input = signal('');
   output = signal('');
-  crypt = inject(CryptService);
+  coder = inject(CryptService);
   audio = inject(MorseCodePlayerService);
+  error = signal(false);
 
   constructor() {
   }
 
   encrypt(): void {
-    this.output.set(this.crypt.encrypt(this.input().trim()));
+    try{
+      this.output.set(this.coder.encode(this.input().trim()));
+      this.error.set(false);
+    }
+    catch (e) {
+      this.error.set(true);
+    }
     this.clear();
   }
 

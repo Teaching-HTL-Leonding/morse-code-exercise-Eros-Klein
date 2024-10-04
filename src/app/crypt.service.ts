@@ -44,7 +44,7 @@ export class CryptService {
   constructor() {
   }
 
-  encrypt(input: string): string {
+  encode(input: string): string {
     let output = '';
     for (let i = 0; i < input.length; i++) {
       let char = input[i].toUpperCase();
@@ -52,12 +52,12 @@ export class CryptService {
       if (entry) {
         output += entry.value + ' ';
       }
-      else return 'Invalid Character';
+      else throw new Error('Invalid Character');
     }
-    return output;
+    return output.trim();
   }
 
-  decrypt(input: string): string {
+  decode(input: string): string {
     let output = '';
     let words = input.split(' ');
     for (let i = 0; i < words.length; i++) {
@@ -65,8 +65,8 @@ export class CryptService {
       if (entry) {
         output += entry.key;
       }
-      else return 'Invalid Morse Code';
+      else throw new Error('Invalid Character');
     }
-    return output;
+    return output.trim();
   }
 }

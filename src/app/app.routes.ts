@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import {EncryptComponent} from "./encrypt/encrypt.component";
-import {DecryptComponent} from "./decrypt/decrypt.component";
+import {EncodeComponent} from "./encode/encode.component";
+import {DecodeComponent} from "./decode/decode.component";
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/encrypt', pathMatch: 'full' },
-  { path: 'encrypt', component: EncryptComponent },
-  { path: 'decrypt', component: DecryptComponent }
+  { path: '', redirectTo: '/encode', pathMatch: 'full' },
+  { path: 'encode', component: EncodeComponent },
+  { path: 'decode', component: DecodeComponent }
 ];

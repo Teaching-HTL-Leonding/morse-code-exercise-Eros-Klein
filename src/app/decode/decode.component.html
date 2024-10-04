@@ -1,0 +1,9 @@
+<div class="container">
+  <input [(ngModel)]="input">
+
+  <button [disabled]="!input()" (click)="decrypt()">Decode</button>
+
+  @if (output()) {
+    <input [class]="{'error': error()}" [(ngModel)]="output" readonly>
+  }
+</div>
