@@ -46,4 +46,12 @@ export class EncryptComponent {
       }
     }
   }
+
+  inputIsInValid(): boolean {
+    const matcher = this.input().match(/[^a-zA-Z\s]/g);
+    if (matcher && matcher.length > 0) {
+      return false;
+    }
+    return this.input().trim().length > 0;
+  }
 }

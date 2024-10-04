@@ -1,7 +1,7 @@
 <div class="container">
   <input [(ngModel)]="input">
 
-  <button [disabled]="!input()" (click)="encrypt()">Encrypt</button>
+  <button [disabled]="!inputIsInValid()" (click)="encrypt()">Encrypt</button>
 
   @if (output()) {
     <div class="result">
