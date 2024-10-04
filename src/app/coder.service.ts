@@ -8,7 +8,7 @@ type DictionaryEntry = {
 @Injectable({
   providedIn: 'root'
 })
-export class CryptService {
+export class CoderService {
   morseCodeDictionary: DictionaryEntry[] = [
     {key: 'A', value: '.-'},
     {key: 'B', value: '-...'},

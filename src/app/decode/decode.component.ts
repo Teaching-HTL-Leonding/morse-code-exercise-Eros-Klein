@@ -1,5 +1,5 @@
 import {Component, inject, signal} from '@angular/core';
-import {CryptService} from "../crypt.service";
+import {CoderService} from "../coder.service";
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -12,7 +12,7 @@ import {FormsModule} from "@angular/forms";
   styleUrl: './decode.component.css'
 })
 export class DecodeComponent {
-  coder : CryptService = inject(CryptService);
+  coder : CoderService = inject(CoderService);
 
   readonly input = signal('');
   readonly output = signal('');

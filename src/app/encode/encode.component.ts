@@ -1,5 +1,5 @@
 import {Component, inject, signal} from '@angular/core';
-import {CryptService} from "../crypt.service";
+import {CoderService} from "../coder.service";
 import {FormsModule} from "@angular/forms";
 import {MorseCodePlayerService} from "../morse-code-player.service";
 import {addWarning} from "@angular-devkit/build-angular/src/utils/webpack-diagnostics";
@@ -16,7 +16,7 @@ import {addWarning} from "@angular-devkit/build-angular/src/utils/webpack-diagno
 export class EncodeComponent {
   input = signal('');
   output = signal('');
-  coder = inject(CryptService);
+  coder = inject(CoderService);
   audio = inject(MorseCodePlayerService);
   error = signal(false);
 
