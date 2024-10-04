@@ -1,8 +1,12 @@
-<input [(ngModel)]="input">
+<div class="container">
+  <input [(ngModel)]="input">
 
-<button [disabled]="!input()" (click)="encrypt()">Encrypt</button>
+  <button [disabled]="!input()" (click)="encrypt()">Encrypt</button>
 
-@if (output()){
-  <p>Result: {{output()}}</p>
-}
-
+  @if (output()) {
+    <div class="result">
+      <input readonly [(ngModel)]="output">
+      <button (click)="playResult()">Play</button>
+    </div>
+  }
+</div>

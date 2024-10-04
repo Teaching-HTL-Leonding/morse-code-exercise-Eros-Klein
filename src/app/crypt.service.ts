@@ -35,7 +35,10 @@ export class CryptService {
     {key: 'W', value: '.--'},
     {key: 'X', value: '-..-'},
     {key: 'Y', value: '-.--'},
-    {key: 'Z', value: '--..'}
+    {key: 'Z', value: '--..'},
+    {key: ' ', value: '/'},
+    {key: '.', value: '.'},
+    {key: '-', value: '-'},
   ];
 
   constructor() {

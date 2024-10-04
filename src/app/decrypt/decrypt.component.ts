@@ -21,11 +21,11 @@ export class DecryptComponent {
   }
 
   decrypt(): void {
-    this.output.set(this.crypt.decrypt(this.input()));
+    this.output.set(this.crypt.decrypt(this.input().trim()));
+    this.clear();
   }
 
   clear() {
     this.input.set('');
-    this.output.set('');
   }
 }

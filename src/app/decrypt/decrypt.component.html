@@ -1,7 +1,9 @@
-<input [(ngModel)]="input">
+<div class="container">
+  <input [(ngModel)]="input">
 
-<button [disabled]="!input()" (click)="decrypt()">Decrypt</button>
+  <button [disabled]="!input()" (click)="decrypt()">Decrypt</button>
 
-@if (output()) {
-  <p>Result: {{ output() }}</p>
-}
+  @if (output()) {
+    <input [(ngModel)]="output" readonly>
+  }
+</div>
