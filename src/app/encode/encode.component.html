@@ -1,0 +1,12 @@
+<div class="container">
+  <input [(ngModel)]="input">
+
+  <button [disabled]="!inputIsInValid()" (click)="encrypt()">Encode</button>
+
+  @if (output()) {
+    <div class="result">
+      <input [class]="{'error': error()}" readonly [ngModel]="output()">
+      <button (click)="playResult()">Play</button>
+    </div>
+  }
+</div>

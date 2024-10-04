@@ -1,0 +1,12 @@
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(173, 255, 47, 0.25);
+  border-radius: 1em;
+  box-shadow: #000000 0.5em 0.5em 0.5em;
+  padding: 2em;
+  color: white;
+}
+
